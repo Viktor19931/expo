@@ -10,11 +10,14 @@
     "postinstall": "rndebugger-open --expo",
     "precommit": "yarn format && yarn lint"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm precommit"
-    }
-  },
+    "lint-staged": {
+    "*.js": [
+        "yarn format",
+        "yarn lint",
+        "yarn flow",
+        "git add"
+    ]
+},
   "dependencies": {
     "expo": "^32.0.0",
     "react": "16.5.0",
