@@ -4,12 +4,12 @@ import React, { Component } from 'react'
 import { TextInput, Button } from 'react-native'
 
 type LoginProps = {
-  navigation: any
+  navigation: any,
 }
 
 type LoginState = {
   email: string,
-  pass: string
+  pass: string,
 }
 
 class SignIn extends Component<LoginProps, LoginState> {

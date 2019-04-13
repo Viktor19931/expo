@@ -14,7 +14,6 @@ const stores = {
 type AppProps = {}
 
 class App extends React.Component<AppProps> {
-  
   render() {
     return (
       <Provider {...stores}>
