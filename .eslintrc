@@ -1,0 +1,26 @@
+{
+  "parser": "babel-elsint",
+  "extends": ["plugin:flowtype/recommended", "airbnb", "prettier"],
+  "plugins": ["react", "flowtype", "jsx-a11y", "import"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": 0,
+    "lines-between-class-members": 0,
+    "react/destructuring-assignment": 0,
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1,
+    "react/require-default-props": 0
+  },
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  }
+}

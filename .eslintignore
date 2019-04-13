@@ -1,0 +1,5 @@
+dist/
+config/
+flow-typed/
+**/__*-fixtures__/**
+serviceWorker.js

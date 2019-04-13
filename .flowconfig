@@ -1,0 +1,16 @@
+[ignore]
+<PROJECT_ROOT>/node_modules
+
+[include]
+
+[libs]
+./type-def-libs
+
+[lints]
+
+[options]
+module.name_mapper='^@navigation\(.*\)$' -> '<PROJECT_ROOT>/src/navigation/\1'
+ 
+[strict]
+
+[version]
