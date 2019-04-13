@@ -19,8 +19,7 @@
     "*.js": [
       "yarn format",
       "yarn lint",
-      "yarn flow",
-      "git add"
+      "yarn flow"
     ]
   },
   "dependencies": {
