@@ -7,8 +7,7 @@
     "eject": "expo eject",
     "format": "prettier --write --single-quote --print-width=70 --parser=flow --tab-width=2 \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
-    "postinstall": "rndebugger-open --expo",
-    "precommit": "yarn format && yarn lint"
+    "postinstall": "rndebugger-open --expo"
   },
   "husky": {
     "hooks": {
@@ -19,7 +18,8 @@
     "*.js": [
       "yarn format",
       "yarn lint",
-      "yarn flow"
+      "yarn flow",
+      "git add"
     ]
   },
   "dependencies": {
