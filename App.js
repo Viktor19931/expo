@@ -1,29 +1,27 @@
 // @flow
 
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Provider } from 'mobx-react'
 
-import Navigation from '@navigation'
+import Navigation from 'navigation'
+import CountStore from 'stores/countStore'
+
+const countStore = new CountStore()
+const stores = {
+  countStore,
+}
 
 type AppProps = {}
 
 class App extends React.Component<AppProps> {
+  
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <Provider {...stores}>
         <Navigation />
-      </View>
+      </Provider>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
 
 export default App

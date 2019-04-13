@@ -9,7 +9,11 @@
 [lints]
 
 [options]
-module.name_mapper='^@navigation\(.*\)$' -> '<PROJECT_ROOT>/src/navigation/\1'
+esproposal.decorators=ignore
+module.name_mapper='^navigation\(.*\)$' -> '<PROJECT_ROOT>/src/navigation/\1'
+module.name_mapper='^stores\(.*\)$' -> '<PROJECT_ROOT>/src/stores/\1'
+module.name_mapper='^screens\(.*\)$' -> '<PROJECT_ROOT>/src/screens/\1'
+module.name_mapper='^src\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
  
 [strict]
 

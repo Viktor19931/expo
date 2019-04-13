@@ -1,7 +1,18 @@
-import React, { Component } from 'react'
-import { TextInput, Button, View } from 'react-native'
+// @flow
 
-class SignIn extends Component {
+import React, { Component } from 'react'
+import { TextInput, Button } from 'react-native'
+
+type LoginProps = {
+  navigation: any
+}
+
+type LoginState = {
+  email: string,
+  pass: string
+}
+
+class SignIn extends Component<LoginProps, LoginState> {
   state = {
     email: '',
     pass: '',
@@ -12,7 +23,6 @@ class SignIn extends Component {
   }
 
   handleSubmit = () => {
-    console.log(this.state.email, this.state.pass)
     this.props.navigation.navigate('App')
   }
 
@@ -20,6 +30,8 @@ class SignIn extends Component {
     return (
       <>
         <TextInput
+          onChangeText={val => this.setState({ email: val })}
+          placeholder="email"
           style={{
             width: 250,
             alignSelf: 'center',
@@ -29,11 +41,12 @@ class SignIn extends Component {
             borderColor: 'grey',
             borderWidth: 1,
           }}
-          placeholder="email"
           value={this.state.email}
-          onChangeText={val => this.setState({ email: val })}
         />
         <TextInput
+          onChangeText={val => this.setState({ pass: val })}
+          placeholder="password"
+          secureTextEntry
           style={{
             width: 250,
             alignSelf: 'center',
@@ -43,12 +56,9 @@ class SignIn extends Component {
             borderColor: 'grey',
             borderWidth: 1,
           }}
-          placeholder="password"
-          secureTextEntry
           value={this.state.pass}
-          onChangeText={val => this.setState({ pass: val })}
         />
-        <Button title="Sign in" onPress={this.handleSubmit} />
+        <Button onPress={this.handleSubmit} title="Sign in" />
       </>
     )
   }

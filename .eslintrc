@@ -1,6 +1,6 @@
 {
-  "parser": "babel-elsint",
-  "extends": ["plugin:flowtype/recommended", "airbnb", "prettier"],
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier", "plugin:react/recommended"],
   "plugins": ["react", "flowtype", "jsx-a11y", "import"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -9,7 +9,12 @@
     "react/destructuring-assignment": 0,
     "flowtype/define-flow-type": 1,
     "flowtype/use-flow-type": 1,
-    "react/require-default-props": 0
+    "react/require-default-props": 0,
+    "react/sort-comp": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-plusplus": 0,
+    "no-return-assign": 0,
+    "react/jsx-one-expression-per-line": 0
   },
   "parserOptions": {
     "ecmaVersion": 2016,
@@ -19,8 +24,20 @@
     }
   },
   "env": {
-    "es6": true,
+    "node": true,
     "browser": true,
-    "node": true
+    "es6": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules", 
+          "src/", 
+          "src/navigation", 
+          "src/screens"
+        ]
+      }
+    }
   }
 }
