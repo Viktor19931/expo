@@ -1,5 +1,4 @@
 {
-  "extends": "./babel.config.js",
   "presets": ["babel-preset-expo", "mobx", "@babel/flow"],
   "plugins": [
     [
