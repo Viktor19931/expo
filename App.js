@@ -5,9 +5,9 @@ import { StyleSheet, Text, View } from 'react-native'
 
 import Navigation from '@navigation'
 
+type AppProps = {}
 
-
-class App extends React.Component {
+class App extends React.Component<AppProps> {
   render() {
     return (
                   <View style={{ flex: 1 }}>
