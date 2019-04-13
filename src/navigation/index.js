@@ -1,5 +1,3 @@
-// @flow
-
 import {
   createStackNavigator,
   createAppContainer,
@@ -15,7 +13,6 @@ import Details from 'screens/Details'
 
 const AuthStack = createStackNavigator(
   {
-    // $FlowFixMe
     SignIn: { screen: SignIn },
     SignUp: { screen: SignUp },
     ForgotPass: { screen: ForgotPass },
@@ -35,7 +32,6 @@ const AppStack = createStackNavigator(
   }
 )
 
-// $FlowFixMe
 const AppNavigator = createAppContainer(
   createSwitchNavigator(
     {

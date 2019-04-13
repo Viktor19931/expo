@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from 'react'
 import { TextInput, Button } from 'react-native'
 
@@ -30,8 +28,6 @@ class SignIn extends Component<LoginProps, LoginState> {
     return (
       <>
         <TextInput
-          onChangeText={val => this.setState({ email: val })}
-          placeholder="email"
           style={{
             width: 250,
             alignSelf: 'center',
@@ -41,12 +37,11 @@ class SignIn extends Component<LoginProps, LoginState> {
             borderColor: 'grey',
             borderWidth: 1,
           }}
+          placeholder="email"
           value={this.state.email}
+          onChangeText={val => this.setState({ email: val })}
         />
         <TextInput
-          onChangeText={val => this.setState({ pass: val })}
-          placeholder="password"
-          secureTextEntry
           style={{
             width: 250,
             alignSelf: 'center',
@@ -56,9 +51,12 @@ class SignIn extends Component<LoginProps, LoginState> {
             borderColor: 'grey',
             borderWidth: 1,
           }}
+          placeholder="password"
+          secureTextEntry
           value={this.state.pass}
+          onChangeText={val => this.setState({ pass: val })}
         />
-        <Button onPress={this.handleSubmit} title="Sign in" />
+        <Button title="Sign in" onPress={this.handleSubmit} />
       </>
     )
   }
