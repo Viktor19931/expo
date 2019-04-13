@@ -7,15 +7,14 @@
     "eject": "expo eject",
     "format": "prettier --write --single-quote --print-width=70 --parser=flow --tab-width=2 \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
-    "postinstall": "rndebugger-open --expo",
-    "precommit": "lint-staged && yarn test"
+    "postinstall": "rndebugger-open --expo"
   },
-  "lint-staged": {
-    "*.js": [
-      "yarn pretty",
-      "git add"
-    ]
-  },
+  "husky": {
+      "hooks": {
+        "pre-commit": "yarn lint && yarn format && yarn flow",
+        "pre-push": ""
+      }
+    },
   "dependencies": {
     "expo": "^32.0.0",
     "react": "16.5.0",
@@ -30,7 +29,6 @@
     "babel-eslint": "^10.0.1",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-expo": "^5.0.0",
-    "babel-preset-flow": "^6.23.0",
     "babel-preset-mobx": "^2.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-flowtype": "^3.6.1",

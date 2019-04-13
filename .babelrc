@@ -1,6 +1,6 @@
 {
   "extends": "./babel.config.js",
-  "presets": ["babel-preset-expo", "mobx", "flow"],
+  "presets": ["babel-preset-expo", "mobx", "@babel/flow"],
   "plugins": [
     [
       "module-resolver",
