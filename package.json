@@ -15,7 +15,7 @@
     }
   },
  "lint-staged": {
-   "*.js": ["yarn lint", "git add"]
+   "*.js": ["lint", "git add"]
  },
   "dependencies": {
     "expo": "^32.0.0",
