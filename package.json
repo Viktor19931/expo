@@ -7,16 +7,15 @@
     "eject": "expo eject",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
-    "postinstall": "rndebugger-open --expo",
-    "precommit": "lint-staged"
+    "postinstall": "rndebugger-open --expo"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn format"
+      "pre-commit": "lint-staged"
     }
   },
  "lint-staged": {
-   "*.js": ["yarn lint", "git add"]
+   "src/**/*.js": ["yarn lint", "yarn format", "git add"]
  },
   "dependencies": {
     "expo": "^32.0.0",
