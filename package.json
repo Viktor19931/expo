@@ -9,14 +9,6 @@
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
     "postinstall": "rndebugger-open --expo"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format"
-    }
-  },
- "lint-staged": {
-   "src/**/*.js": ["yarn lint", "yarn format", "git add"]
- },
   "dependencies": {
     "expo": "^32.0.0",
     "mobx": "^5.9.4",
