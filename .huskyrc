@@ -1,6 +1,5 @@
 {
     "hooks": {
-      "pre-commit": "yarn format && git add .",
-      "commit-msg": "yarn commitmsg"
+      "pre-commit": "yarn format"
     }
 }
