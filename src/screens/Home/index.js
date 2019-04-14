@@ -20,7 +20,7 @@ class HomeScreen extends Component<HomeProps> {
     } = this.props
     return (
       <>
-        <Text>Hodme created !</Text>
+        <Text>Hodmce created !</Text>
         <Text>Counter ={price}</Text>
         <Button onPress={() => navigation.navigate('Auth')} title="Auth" />
         <Button onPress={() => navigation.navigate('Details')} title="Details" />
