@@ -22,7 +22,7 @@ class HomeScreen extends Component<HomeProps> {
       <>
         <Text>Home created !</Text>
         <Text>Counter ={price}</Text>
-               <Button onPress={() => navigation.navigate('Auth')} title="Auth" />
+                  <Button onPress={() => navigation.navigate('Auth')} title="Auth" />
         <Button onPress={() => navigation.navigate('Details')} title="Details" />
         <Button onPress={() => add()} title="add 1" />
         <Button onPress={reset} title="reset counter" />
