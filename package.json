@@ -5,9 +5,10 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "format": "prettier --write --single-quote --print-width=70 --parser=flow --tab-width=2 \"src/**/*.{js,jsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
-    "postinstall": "rndebugger-open --expo"
+    "postinstall": "rndebugger-open --expo",
+    "commitmsg": "commitlint -E GIT_PARAMS"
   },
   "dependencies": {
     "expo": "^32.0.0",
@@ -27,6 +28,8 @@
     "babel-preset-expo": "^5.0.0",
     "babel-preset-mobx": "^2.0.0",
     "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-flowtype": "^3.6.1",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",

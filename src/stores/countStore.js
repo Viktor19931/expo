@@ -5,11 +5,11 @@ import remotedev from 'mobx-remotedev'
 
 @remotedev
 class Store {
-    @observable price = 10
+  @observable price = 10
 
-    add = () => this.price++
+  add = () => this.price++
 
-    reset = () => this.price = 0
+  reset = () => (this.price = 0)
 }
 
 export default Store
