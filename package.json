@@ -7,7 +7,7 @@
     "eject": "expo eject",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
-    "oncommit": "yarn format && yarn flow && yarn lint && git add .", 
+    "oncommit": "yarn format && yarn flow && yarn lint && git add .",
     "postinstall": "rndebugger-open --expo"
   },
   "dependencies": {

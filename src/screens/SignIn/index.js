@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import { TextInput, Button } from 'react-native'
+import { inject, observer } from 'mobx-react'
+
+import CountStore from '../../stores/countStore'
 
 type LoginProps = {
   navigation: any,
+  countStore: CountStore,
 }
 
 type LoginState = {
@@ -10,6 +14,8 @@ type LoginState = {
   pass: string,
 }
 
+@inject('countStore')
+@observer
 class SignIn extends Component<LoginProps, LoginState> {
   state = {
     email: '',
@@ -22,6 +28,10 @@ class SignIn extends Component<LoginProps, LoginState> {
 
   handleSubmit = () => {
     this.props.navigation.navigate('App')
+  }
+
+  onFbLogin = async () => {
+    this.props.countStore.fbLogin(this.props.navigation)
   }
 
   render() {
@@ -57,6 +67,7 @@ class SignIn extends Component<LoginProps, LoginState> {
           onChangeText={val => this.setState({ pass: val })}
         />
         <Button title="Sign in" onPress={this.handleSubmit} />
+        <Button title="Facebook login" onPress={this.onFbLogin} />
       </>
     )
   }
