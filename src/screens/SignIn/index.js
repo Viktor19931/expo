@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { TextInput, Button } from 'react-native'
+import { TextInput, Button, Slider, Text, View } from 'react-native'
 import { inject, observer } from 'mobx-react'
+import { Brightness, Permissions } from 'expo'
 
 import CountStore from '../../stores/countStore'
 
@@ -17,9 +18,14 @@ type LoginState = {
 @inject('countStore')
 @observer
 class SignIn extends Component<LoginProps, LoginState> {
-  state = {
-    email: '',
-    pass: '',
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: '',
+      pass: '',
+    }
+    this.setPermissions()
+    this.getBrightnessVal()
   }
 
   static navigationOptions = {
@@ -34,9 +40,19 @@ class SignIn extends Component<LoginProps, LoginState> {
     this.props.countStore.fbLogin(this.props.navigation)
   }
 
+  getBrightnessVal = async () => {
+    const res = await Brightness.getBrightnessAsync()
+    this.setState({ b: res })
+  }
+
+  setPermissions = () => {
+    Permissions.askAsync(Permissions.SYSTEM_BRIGHTNESS)
+    Permissions.getAsync(Permissions.SYSTEM_BRIGHTNESS)
+  }
+
   render() {
     return (
-      <>
+      <View style={{ paddingHorizontal: 10 }}>
         <TextInput
           style={{
             width: 250,
@@ -68,7 +84,15 @@ class SignIn extends Component<LoginProps, LoginState> {
         />
         <Button title="Sign in" onPress={this.handleSubmit} />
         <Button title="Facebook login" onPress={this.onFbLogin} />
-      </>
+        <Text>Change Brightness</Text>
+        <Slider
+          maximumValue={1}
+          minimumValue={0}
+          value={this.state.b}
+          onValueChange={Brightness.setBrightnessAsync}
+          // onSlidingComplete={this.setBrightness}
+        />
+      </View>
     )
   }
 }

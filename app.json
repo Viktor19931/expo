@@ -21,6 +21,7 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.expomobx",
       "supportsTablet": true
     },
     "facebookScheme": "fb2383492418533685",

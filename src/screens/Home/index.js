@@ -6,6 +6,7 @@ import { inject, observer } from 'mobx-react'
 
 import CountStore from 'stores/countStore'
 import { Avatar, Wrapper } from './style'
+import { options } from '../../navigation'
 
 type HomeProps = {
   navigation: any,
@@ -15,12 +16,13 @@ type HomeProps = {
 @inject('countStore')
 @observer
 class HomeScreen extends Component<HomeProps> {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }: any) => ({
+    ...options(navigation),
     title: 'Dashboard',
-  }
+    headerRight: <Text onPress={() => navigation.navigate('Home')}>WooHoo</Text>,
+  })
 
   render() {
-    console.log('props -->', this.props.countStore.fbUser)
     const {
       navigation,
       countStore: {
